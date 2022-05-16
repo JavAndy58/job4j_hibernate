@@ -28,11 +28,13 @@ public class HbmRun {
             session.save(two);
             session.save(three);
              */
-
+            /*
             Query query = session.createQuery("from Candidate");
             for (Object candidate : ((org.hibernate.query.Query<?>) query).list()) {
                 System.out.println(candidate);
             }
+
+             */
 
             /*
             Query query = session.createQuery("from Candidate c where c.id = :fId");
@@ -44,14 +46,14 @@ public class HbmRun {
             query.setParameter("fName", "Nikita");
             System.out.println(((org.hibernate.query.Query<?>) query).uniqueResult());
             */
-            /*
+
             session.createQuery("update Candidate c set c.name = :newName, c.experience = :newExperience, c.salary =:newSalary where c.id = :fId")
                             .setParameter("newName", "Andrey")
-                            .setParameter("newExperience", 0)
+                            .setParameter("newExperience", 1)
                             .setParameter("newSalary", 50000)
                             .setParameter("fId", 2)
                             .executeUpdate();
-            */
+
 
             session.getTransaction().commit();
             session.close();
