@@ -6,6 +6,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.springframework.boot.SpringApplication;
+import ru.job4j.gro.model.Candidate;
 
 import javax.persistence.Query;
 
@@ -21,6 +22,7 @@ public class HbmRun {
             Session session = sf.openSession();
             session.beginTransaction();
 
+
             /*
             Candidate one = new Candidate("Alex", 2.5, 150000);
             Candidate two = new Candidate("Nikolay", 1.5, 100000);
@@ -29,6 +31,7 @@ public class HbmRun {
             session.save(two);
             session.save(three);
              */
+
 
             /*
             Query query = session.createQuery("from Candidate");
@@ -43,11 +46,11 @@ public class HbmRun {
             System.out.println(((org.hibernate.query.Query<?>) query).uniqueResult());
             */
 
-            /*
             Query query = session.createQuery("from Candidate c where c.name = :fName");
             query.setParameter("fName", "Nikita");
-            System.out.println(((org.hibernate.query.Query<?>) query).uniqueResult());
-            */
+            for (Object candidate : ((org.hibernate.query.Query<?>) query).list()) {
+                System.out.println(candidate);
+            }
 
             /*
             session.createQuery("update Candidate c set c.name = :newName, c.experience = :newExperience, c.salary = :newSalary where c.id = :fId")
