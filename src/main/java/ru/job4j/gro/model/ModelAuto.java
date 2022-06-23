@@ -1,0 +1,62 @@
+package ru.job4j.gro.model;
+
+import javax.persistence.*;
+import java.util.Objects;
+
+@Entity
+@Table(name = "models")
+public class ModelAuto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String name;
+
+    public ModelAuto() {
+    }
+
+    public ModelAuto(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ModelAuto modelAuto = (ModelAuto) o;
+        return id == modelAuto.id && Objects.equals(name, modelAuto.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
+
+    @Override
+    public String toString() {
+        return "ModelAuto{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + '}';
+    }
+}
