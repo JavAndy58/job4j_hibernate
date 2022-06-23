@@ -14,9 +14,10 @@ public class ModelAuto {
     public ModelAuto() {
     }
 
-    public ModelAuto(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public static ModelAuto of (String name) {
+        ModelAuto modelAuto = new ModelAuto();
+        modelAuto.name = name;
+        return modelAuto;
     }
 
     public int getId() {

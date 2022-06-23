@@ -20,9 +20,10 @@ public class BrandAuto {
     public BrandAuto() {
     }
 
-    public BrandAuto(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public static BrandAuto of(String name) {
+        BrandAuto brandAuto = new BrandAuto();
+        brandAuto.name = name;
+        return brandAuto;
     }
 
     public int getId() {
