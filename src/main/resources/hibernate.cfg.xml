@@ -20,5 +20,7 @@
         <mapping class="ru.job4j.gro.model.Candidate" />
         <mapping class="ru.job4j.gro.model.BrandAuto" />
         <mapping class="ru.job4j.gro.model.ModelAuto" />
+        <mapping class="ru.job4j.gro.model.Book" />
+        <mapping class="ru.job4j.gro.model.Author" />
     </session-factory>
 </hibernate-configuration>
