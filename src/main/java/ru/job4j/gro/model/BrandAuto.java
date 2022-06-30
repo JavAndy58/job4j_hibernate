@@ -1,7 +1,4 @@
 package ru.job4j.gro.model;
-
-import org.dom4j.rule.Mode;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,23 +26,18 @@ public class BrandAuto {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public void addModel(ModelAuto modelAuto) {
         this.models.add(modelAuto);
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -57,12 +49,10 @@ public class BrandAuto {
         BrandAuto brandAuto = (BrandAuto) o;
         return id == brandAuto.id && Objects.equals(name, brandAuto.name);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
-
     @Override
     public String toString() {
         return "BrandAuto{"

@@ -10,11 +10,9 @@ public class ModelAuto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-
     public ModelAuto() {
     }
-
-    public static ModelAuto of (String name) {
+    public static ModelAuto of(String name) {
         ModelAuto modelAuto = new ModelAuto();
         modelAuto.name = name;
         return modelAuto;
@@ -23,19 +21,15 @@ public class ModelAuto {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -47,12 +41,10 @@ public class ModelAuto {
         ModelAuto modelAuto = (ModelAuto) o;
         return id == modelAuto.id && Objects.equals(name, modelAuto.name);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
-
     @Override
     public String toString() {
         return "ModelAuto{"

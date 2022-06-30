@@ -5,8 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.service.Service;
-import org.hibernate.service.ServiceRegistry;
 import ru.job4j.gro.model.BrandAuto;
 import ru.job4j.gro.model.ModelAuto;
 
