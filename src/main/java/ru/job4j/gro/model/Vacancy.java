@@ -4,27 +4,24 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "candidates")
-public class Candidate {
+@Table(name = "vacancies")
+public class Vacancy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
+    private String description;
     private double experience;
     private double salary;
 
-    @OneToOne
-    private DatabaseVacancies databaseVacancies;
-
-    public Candidate() {
+    public Vacancy() {
     }
 
-    public static Candidate of(String name, double experience, double salary) {
-        Candidate candidate = new Candidate();
-        candidate.name = name;
-        candidate.experience = experience;
-        candidate.salary = salary;
-        return candidate;
+    public static Vacancy of(String description, double experience, double salary) {
+        Vacancy vacancy = new Vacancy();
+        vacancy.description = description;
+        vacancy.experience = experience;
+        vacancy.salary = salary;
+        return vacancy;
     }
 
     public int getId() {
@@ -35,12 +32,12 @@ public class Candidate {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public double getExperience() {
@@ -59,14 +56,6 @@ public class Candidate {
         this.salary = salary;
     }
 
-    public DatabaseVacancies getDatabaseVacancies() {
-        return databaseVacancies;
-    }
-
-    public void setDatabaseVacancies(DatabaseVacancies databaseVacancies) {
-        this.databaseVacancies = databaseVacancies;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -75,8 +64,8 @@ public class Candidate {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Candidate candidate = (Candidate) o;
-        return id == candidate.id;
+        Vacancy vacancy = (Vacancy) o;
+        return id == vacancy.id;
     }
 
     @Override
@@ -86,12 +75,11 @@ public class Candidate {
 
     @Override
     public String toString() {
-        return "Candidate{"
+        return "Vacancy{"
                 + "id=" + id
-                + ", name='" + name + '\''
+                + ", description='" + description + '\''
                 + ", experience=" + experience
                 + ", salary=" + salary
-                + ", databaseVacancies=" + databaseVacancies
                 + '}';
     }
 }
